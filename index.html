@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A game made in CSS</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="center-content">
+		<h1 id="title" class="lang">
+
+			<span lang="*">
+				A CSS platform game
+			</span>
+
+			<span lang="es">
+				Un juego de plataformas en CSS
+			</span>
+		</h1>
+		<span id="text" class="lang">
+			<span lang="*">
+				This is an example of a game made using <strong>CEnginy</strong> JavaScript library.
+				<br><br>
+			</span>
+
+			<span lang="es">
+				Éste es un ejemplo de un juego hecho utilizando la librería JavaScript <strong>CEnginy</strong>.
+				<br><br>
+			</span>
+		</span>
+		<iframe src="game.html" width="640" height="480"></iframe>
+
+		<div class="lang" style="width:640px; margin-top:2em; text-align:justify;">
+			<p lang="*">
+				This example contains a perfect-collision platformer movement engine,
+				enemies basic movement and interaction, score counter and time counter.
+				<h2>Controls:</h2>
+				<ul style="margin:0">
+					<li>For move the player: Use <strong>A</strong> and <strong>D</strong> keys,
+						or left and right arrows.</li>
+
+					<li>For jump, press <strong>Spacebar</strong>.</li>
+
+					<li>For pause the game, press <strong>P</strong> key.</li>
+				</ul>
+
+				<h2>Hint:</h2>
+				Use the brown boxes for kill the enemies.
+			</p>
+			<p lang="es">
+				Este ejemplo contiene un sistema de movimiento perfect-collision,
+				enemigos con interacción y movimiento básicos, contador de puntaje y de tiempo.
+				<h2>Controles:</h2>
+				<ul style="margin:0">
+					<li>Para mover al jugador, use las teclas <strong>A</strong> y <strong>D</strong>,
+						o bien las flechas izquierda y derecha.</li>
+
+					<li>Para saltar, presione <strong>Bara espaciadora</strong>.</li>
+
+					<li>Para pausar el juego, presione la tecla <strong>P</strong>.</li>
+				</ul>
+
+				<h2>Pista:</h2>
+				Use las cajas marrones para matar a los enemigos.
+			</p>
+		</div>
+	</div>
+
+	<style type="text/css">
+		iframe
+		{
+			border:none;
+			box-shadow: 4px 4px 4px #CCC;
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.addEventListener("load", function() {
+			const langs = document.getElementsByClassName("lang");
+			for(var i = 0; i < langs.length; i++)
+			{
+				var lang = langs[i].getElementsByTagName("p");
+				console.log(lang);
+				if(!lang.length)
+					lang = langs[i].getElementsByTagName("span");
+				if(!lang.length)
+					continue;
+				var langg = {};
+				for(var j = 0; j < lang.length; j++)
+				{
+					langg[lang[j].getAttribute("lang")] = lang[j];
+					lang[j].style.display = "none";
+				}
+				if(!langg[ _GET("lang") ])
+					langg["*"].style.display = "";
+				else
+					langg[ _GET("lang") ].style.display = "";
+			}
+		});
+		function _GET(string)
+		{
+			var getdata = window.location.toString().split("?")[1];
+			if(!getdata)
+				return "";
+			var pairs = getdata.split("&");
+			var data = {};
+			for(var i = 0; i < pairs.length; i++)
+			{
+				var pair = pairs[i].split("=");
+				data[pair.shift()] = pair.join("=");
+			}
+			return data[string] ? data[string]: "";
+		}
+	</script>
+
+</body>
+</html>

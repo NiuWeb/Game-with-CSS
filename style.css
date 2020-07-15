@@ -1,0 +1,161 @@
+body, html
+{
+	position: relative;
+	height: 100%;
+}
+body
+{
+	overflow: hidden;
+	margin:0;
+	font-family: Helvetica;
+}
+h1, h2, h3, h4, h5
+{
+	margin:0;
+	padding: 8px 0;
+}
+p
+{
+	margin:0;
+	padding: 0;
+	margin-bottom: 1em;
+}
+.center-content 
+{
+	position: relative;
+	height: 100%;
+	
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: flex;
+
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-o-justify-content: center;
+	justify-content: center;
+
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	align-items: center;
+
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+.center-content p
+{
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-o-flex-direction: row;
+	flex-direction: row;
+}
+#game-window
+{
+	width: 640px;
+	height:480px;
+	overflow: hidden;
+
+	-webkit-box-shadow: 4px 4px 4px #CCC;
+	-moz-box-shadow: 4px 4px 4px #CCC;
+	-o-box-shadow: 4px 4px 4px #CCC;
+	box-shadow: 4px 4px 4px #CCC;
+}
+#game-paused
+{
+	width: 640px;
+	height:480px;
+	background-color: rgba(0,0,0, 0.4);
+	color: white;
+
+	display: none;
+	position: absolute;
+	top:0;
+	left:0;
+
+	z-index: 10000;
+}
+.GUI
+{
+	width:640px;
+	height: 480px;
+	z-index: 10000;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.GUI-text
+{
+	display: inline-block;
+	padding: 0.5em;
+}
+.text-stroke
+{
+	color:white;
+	text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+#game-scene
+{
+	position: relative;
+	width: 1280px;
+	height: 520px;
+	background-color: #94C9FF;
+	background-image: url(sprites/backgrounds/sky1.png);
+	background-size: auto 100%;
+}
+#game-scene *
+{
+	position: absolute;
+	display: inline-block;
+
+	background-size: 100%;
+
+	background-position: center;
+	background-repeat: no-repeat;
+
+	white-space: pre;
+}
+
+#game-scene .player, #game-scene .enemy
+{
+	width:32px;
+	height: 55px;
+	z-index:10;
+}
+#game-scene .enemy
+{
+	width: 41px;
+	background-position-x: center;
+	background-position-y: bottom;
+	background-size: inherit;
+}
+#game-scene .wall
+{
+	width:32px;
+	height: 32px;
+	background-size: initial;
+	background-repeat: repeat;
+}
+#game-scene .bullet
+{
+	width: 8px;
+	height: 8px;
+
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+
+	background-color: yellow;
+}
+#game-scene .explosion
+{
+	width: 74px;
+	height: 74px;
+}

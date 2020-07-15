@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A game made in CSS</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="game-paused">
+	<div class="center-content">
+		<h1 style="margin:0">Game paused</h1>
+		(Press &lt;P> for resume game)
+	</div>
+</div>
+<div id="game-window">
+	<div class="GUI text-stroke" style="font-size: 2em">
+		<div id="score-marker" class="GUI-text">Score: 0</div>
+		<div id="time-count" class="GUI-text" style="float:right;">00: 00</div>
+	</div>
+	<div id="game-scene"></div>
+</div>
+<div id="console"></div>
+
+
+<script type="text/javascript" src="scripts/CEnginy-1.0.0.js"></script>
+<script type="text/javascript" src="scripts/game.js"></script>
+
+
+<!--
+
+EN:
+NOTE: Any CEnginy game must be created on an "empty" HTML document,
+and must use "position:absolute" CSS rule for all character  CSS class.
+So that, if you need to include your game in a website, you must use <iframe>
+html tag.
+
+ES:
+NOTA: Cualquier juego CEnginy debe ser creado en un documento HTML "vacío",
+y debe usar la regla CSS "position:absolute" para todas las clases CSS de los
+personajes. Por ello, si necesitas incluír tu juego en un sitio web, debes usar
+la etiqueta html <iframe>.
+
+-->
+</body>
+</html>
